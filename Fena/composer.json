@@ -1,0 +1,5 @@
+{
+    "require": {
+        "fena/php-payment-sdk": "dev-master"
+    }
+}
