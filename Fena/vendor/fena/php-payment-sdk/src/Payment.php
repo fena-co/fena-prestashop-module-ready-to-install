@@ -8,8 +8,8 @@ use Fena\PaymentSDK\Helper\NumberFormatter;
 
 class Payment
 {
-    private $endpoint = 'https://business.api.staging.fena.co/public/payments/create-and-process';
-    private $checkEndpoint = 'https://business.api.staging.fena.co/payment-flow/public/payment/';
+    private $endpoint = 'https://business.api.fena.co/public/payments/create-and-process';
+    private $checkEndpoint = 'https://business.api.fena.co/payment-flow/public/payment/';
 
     protected $refNumber;
     protected $orderId;
