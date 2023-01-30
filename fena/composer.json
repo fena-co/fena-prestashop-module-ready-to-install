@@ -1,0 +1,11 @@
+{
+  "require": {
+    "fena/php-payment-sdk": "dev-master"
+  },
+  "require-dev": {
+    "prestashop/autoindex": "^2.1"
+  },
+  "config": {
+    "prepend-autoloader": false
+  }
+}
