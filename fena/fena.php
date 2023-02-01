@@ -29,6 +29,7 @@ class Fena extends PaymentModule
     public function __construct()
     {
         $this->name = 'fena';
+        $this->module_key = 'd34740ef574ddfc9871d1e8ad6a4aeae';
         $this->author = 'Fena.co';
         $this->version = '1.0.0';
         $this->bootstrap = true;
