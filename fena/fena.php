@@ -30,7 +30,7 @@ class Fena extends PaymentModule
     {
         $this->name = 'fena';
         $this->module_key = 'd34740ef574ddfc9871d1e8ad6a4aeae';
-        $this->author = 'Fena.co';
+        $this->author = 'Fena';
         $this->version = '1.0.0';
         $this->bootstrap = true;
         $this->tab = 'payments_gateways';
@@ -84,6 +84,7 @@ class Fena extends PaymentModule
 
     public function getContent()
     {
+        $output = '';
         $url = $_SERVER['HTTP_HOST'];
         $this->context->smarty->assign([
             'Webhook' => $url,
@@ -93,6 +94,7 @@ class Fena extends PaymentModule
             $clientSecret = Tools::getValue('clientSecret');
             Configuration::updateValue('FENA_CLIENTID', $clientId);
             Configuration::updateValue('FENA_CLIENTSECRET', $clientSecret);
+            $output = $this->displayConfirmation($this->l('Settings updated'));
         }
         $this->context->smarty->assign([
           'FENA_CLIENTID' => Configuration::get('FENA_CLIENTID'),
@@ -101,6 +103,6 @@ class Fena extends PaymentModule
            'FENA_CLIENTSECRET' => Configuration::get('FENA_CLIENTSECRET'),
         ]);
 
-        return $this->display(__FILE__, 'views/templates/admin/configuration.tpl');
+        return $output . $this->display(__FILE__, 'views/templates/admin/configuration.tpl');
     }
 }
